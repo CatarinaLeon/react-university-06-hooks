@@ -1,65 +1,113 @@
-import { Component } from 'react';
+// import { Component } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './Modal.module.css';
 
 const modalRootRef = document.querySelector('#modal-root');
-// console.log(createPortal);
 
-class Modal extends Component {
-  // закрытие модалки по Esc
-  componentDidMount() {
-    window.addEventListener('keydown', this.onEscPress);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.onEscPress);
-  }
-  onEscPress = e => {
-    if (e.code === 'Escape') {
-      // console.log('Escape');
-      this.props.onClose();
-    }
-  };
+const Modal = ({ onClose, icon, title, children }) => {
+  useEffect(() => {
+    const onEscPress = e => {
+      if (e.code === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', onEscPress);
+    return () => {
+      window.removeEventListener('keydown', onEscPress);
+    };
+  }, [onClose]);
 
-  // Метод клик по бекдропу
-  handleBackdropClick = e => {
+  const handleBackdropClick = e => {
     if (e.target === e.currentTarget) {
-      this.props.onClose();
+      onClose();
     }
   };
 
-  render() {
-    const { onClose, icon, title, children } = this.props;
+  return createPortal(
+    <div className={styles.backdrop} onClick={handleBackdropClick}>
+      <div className={styles.modal}>
+        <header className={styles.header}>
+          <button
+            className={styles.closeBtn}
+            onClick={onClose}
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </header>
 
-    return createPortal(
-      <div className={styles.backdrop} onClick={this.handleBackdropClick}>
-        <div className={styles.modal}>
-          <header className={styles.header}>
-            <button
-              className={styles.closeBtn}
-              onClick={onClose}
-              aria-label="Close"
-            >
-              &times;
-            </button>
-          </header>
-
-          <div className={styles.content}>
-            <div className={styles.lead}>
-              <div className={styles.imageWrapper}>
-                <img src={icon} alt={title} />
-              </div>
-              <h3 className="heading">{title}</h3>
+        <div className={styles.content}>
+          <div className={styles.lead}>
+            <div className={styles.imageWrapper}>
+              <img src={icon} alt={title} />
             </div>
-
-            {children}
+            <h3 className="heading">{title}</h3>
           </div>
+
+          {children}
         </div>
-      </div>,
-      modalRootRef,
-    );
-  }
-}
+      </div>
+    </div>,
+    modalRootRef,
+  );
+};
+
+// class Modal extends Component {
+//   // закрытие модалки по Esc
+//   componentDidMount() {
+//     window.addEventListener('keydown', this.onEscPress);
+//   }
+//   componentWillUnmount() {
+//     window.removeEventListener('keydown', this.onEscPress);
+//   }
+//   onEscPress = e => {
+//     if (e.code === 'Escape') {
+//       // console.log('Escape');
+//       this.props.onClose();
+//     }
+//   };
+
+//   // Метод клик по бекдропу
+//   handleBackdropClick = e => {
+//     if (e.target === e.currentTarget) {
+//       this.props.onClose();
+//     }
+//   };
+
+//   render() {
+//     const { onClose, icon, title, children } = this.props;
+
+//     return createPortal(
+//       <div className={styles.backdrop} onClick={this.handleBackdropClick}>
+//         <div className={styles.modal}>
+//           <header className={styles.header}>
+//             <button
+//               className={styles.closeBtn}
+//               onClick={onClose}
+//               aria-label="Close"
+//             >
+//               &times;
+//             </button>
+//           </header>
+
+//           <div className={styles.content}>
+//             <div className={styles.lead}>
+//               <div className={styles.imageWrapper}>
+//                 <img src={icon} alt={title} />
+//               </div>
+//               <h3 className="heading">{title}</h3>
+//             </div>
+
+//             {children}
+//           </div>
+//         </div>
+//       </div>,
+//       modalRootRef,
+//     );
+//   }
+// }
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
