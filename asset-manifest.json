@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-university-06-hooks/static/css/main.5b7c8b4b.chunk.css",
-    "main.js": "/react-university-06-hooks/static/js/main.37e1d14f.chunk.js",
-    "main.js.map": "/react-university-06-hooks/static/js/main.37e1d14f.chunk.js.map",
+    "main.css": "/react-university-06-hooks/static/css/main.797ee2fd.chunk.css",
+    "main.js": "/react-university-06-hooks/static/js/main.b153b59b.chunk.js",
+    "main.js.map": "/react-university-06-hooks/static/js/main.b153b59b.chunk.js.map",
     "runtime-main.js": "/react-university-06-hooks/static/js/runtime-main.f4aed08e.js",
     "runtime-main.js.map": "/react-university-06-hooks/static/js/runtime-main.f4aed08e.js.map",
     "static/css/2.f4c56af9.chunk.css": "/react-university-06-hooks/static/css/2.f4c56af9.chunk.css",
-    "static/js/2.18cbd0eb.chunk.js": "/react-university-06-hooks/static/js/2.18cbd0eb.chunk.js",
-    "static/js/2.18cbd0eb.chunk.js.map": "/react-university-06-hooks/static/js/2.18cbd0eb.chunk.js.map",
+    "static/js/2.910a9a6b.chunk.js": "/react-university-06-hooks/static/js/2.910a9a6b.chunk.js",
+    "static/js/2.910a9a6b.chunk.js.map": "/react-university-06-hooks/static/js/2.910a9a6b.chunk.js.map",
     "index.html": "/react-university-06-hooks/index.html",
     "static/css/2.f4c56af9.chunk.css.map": "/react-university-06-hooks/static/css/2.f4c56af9.chunk.css.map",
-    "static/css/main.5b7c8b4b.chunk.css.map": "/react-university-06-hooks/static/css/main.5b7c8b4b.chunk.css.map",
-    "static/js/2.18cbd0eb.chunk.js.LICENSE.txt": "/react-university-06-hooks/static/js/2.18cbd0eb.chunk.js.LICENSE.txt",
+    "static/css/main.797ee2fd.chunk.css.map": "/react-university-06-hooks/static/css/main.797ee2fd.chunk.css.map",
+    "static/js/2.910a9a6b.chunk.js.LICENSE.txt": "/react-university-06-hooks/static/js/2.910a9a6b.chunk.js.LICENSE.txt",
     "static/media/add.d0de6ae0.svg": "/react-university-06-hooks/static/media/add.d0de6ae0.svg",
     "static/media/delete.58cc0fc3.svg": "/react-university-06-hooks/static/media/delete.58cc0fc3.svg",
     "static/media/dots.5932bf50.svg": "/react-university-06-hooks/static/media/dots.5932bf50.svg",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.f4aed08e.js",
     "static/css/2.f4c56af9.chunk.css",
-    "static/js/2.18cbd0eb.chunk.js",
-    "static/css/main.5b7c8b4b.chunk.css",
-    "static/js/main.37e1d14f.chunk.js"
+    "static/js/2.910a9a6b.chunk.js",
+    "static/css/main.797ee2fd.chunk.css",
+    "static/js/main.b153b59b.chunk.js"
   ]
 }
