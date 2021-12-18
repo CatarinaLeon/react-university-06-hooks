@@ -5,7 +5,9 @@
   letter-spacing: 1.25px;
   text-transform: uppercase;
 }
-
+:global(.absence-msg) {
+  margin-bottom: 20px;
+}
 input[type='text'],
 input[type='email'],
 input[type='tel'] {

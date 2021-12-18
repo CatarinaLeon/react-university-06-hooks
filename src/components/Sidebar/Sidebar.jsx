@@ -1,5 +1,6 @@
 // import { Component } from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
+import useToggle from 'hooks/useToggle';
 import Navigation from '../Navigation/Navigation';
 import { navConfig } from '../../data/navigation';
 import './Sidebar.css';
@@ -13,11 +14,11 @@ const defineStyles = isOpen => {
 };
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setIsOpen(prevIsOpen => !prevIsOpen);
-  };
+  const [isOpen, toggleSidebar] = useToggle(true);
+  // const [isOpen, setIsOpen] = useState(true);
+  // const toggleSidebar = () => {
+  //   setIsOpen(prevIsOpen => !prevIsOpen);
+  // };
 
   return (
     <div className={defineStyles(isOpen)}>

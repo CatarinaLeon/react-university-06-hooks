@@ -1,5 +1,6 @@
 // import { Component } from 'react';
 import { useEffect } from 'react';
+import { useLockBodyScroll } from 'react-use';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './Modal.module.css';
@@ -18,6 +19,8 @@ const Modal = ({ onClose, icon, title, children }) => {
       window.removeEventListener('keydown', onEscPress);
     };
   }, [onClose]);
+
+  useLockBodyScroll(true);
 
   const handleBackdropClick = e => {
     if (e.target === e.currentTarget) {

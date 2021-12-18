@@ -9,6 +9,18 @@ const EditCard = ({ label, onSave, inputValue }) => {
   const [input, setInput] = useState(inputValue);
   const inputRef = useRef(null);
 
+  //////////////  componentDidUpdate
+  const isFirstRender = useRef(true);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      console.log('first');
+      return;
+    }
+    console.log('sec');
+  }, [input]);
+  ///////////////////////
+
   useEffect(() => {
     inputRef.current.focus();
   }, []);
@@ -23,7 +35,7 @@ const EditCard = ({ label, onSave, inputValue }) => {
 
   const reset = () => setInput('');
 
-  const inputId = nanoid();
+  const { current: inputId } = useRef(nanoid());
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
